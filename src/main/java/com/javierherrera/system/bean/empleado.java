@@ -1,14 +1,29 @@
 package com.javierherrera.system.bean;
 
-public class empleado {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-    public empleado() {
-    }
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 
-    int id;
-    String nombreCompleto;
-    int dpi;
-    String puesto;
-    Double salario;
+public class Empleado {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    public Integer id;
+    public String nombreCompleto;
+    public Integer dpi;
+    public String puesto;
+    public Double salario;
 
 }
